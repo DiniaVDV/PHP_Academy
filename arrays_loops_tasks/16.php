@@ -20,9 +20,9 @@ $arr = [
 
 
 foreach ($arr as $elem){
-	if ($elem == 3 || $elem == 6 || $elem == 9){
-		echo $elem . " <br>";
-	}else echo $elem . ", <br>";
+	if ($elem % 3){
+		echo $elem . ", ";
+	}else echo $elem . "<br>";
 	
 }
 
