@@ -25,5 +25,3 @@ foreach ($arr as $elem){
 	}else echo $elem . "<br>";
 	
 }
-
-
