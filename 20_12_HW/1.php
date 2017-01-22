@@ -16,5 +16,5 @@ function letterUp ($letter){
 	$letterUp = mb_convert_case($letter, MB_CASE_UPPER, "UTF-8");	
 	return $letterUp;
 }
-$arrayLetterUp = array_map("letterUp", $arr);
+$arrayLetterUp = array_map(letterUp($arr));
 print_r ($arrayLetterUp);
