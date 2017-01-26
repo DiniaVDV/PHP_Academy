@@ -15,15 +15,18 @@
 	<input type="submit" value="Отправить!">
 </form>
 <?php
-
+$userData = ['$username' => '',
+			'$userSecondName' => ''	
+			];
 $urlName = "Database.txt";
-if(!empty($_POST)){
+
 	if(empty($_POST['fname'])){
 		echo "Поле имя не заполнено";
 	}
 	if(empty($_POST['lname'])){
 		echo "Поле фамилия не заполнено";
-	}else{
+	}
+	if(!empty($_POST['fname']) && !empty($_POST['lname'])){
 		$userData = ['$username' => ($_POST['fname']),
 					'$userSecondName' => ($_POST['lname'])	
 			];
@@ -31,20 +34,18 @@ if(!empty($_POST)){
 			$databaseNames = file_get_contents($urlName);
 			if(empty($databaseNames)){
 				$serializeName = serialize($userData);
-				var_dump($serializeName);
+
 				file_put_contents($urlName, $serializeName);
-		
+				
 			}else{
-				echo 1;
 				$unserializeNames = unserialize($databaseNames);
 				array_push($unserializeNames, $userData);
 				$serializeName = serialize($unserializeNames);
 				file_put_contents($urlName, $serializeName);
+				header('Location:1.php');
 			}
 		}
 	}
-}else{
-	
-}
+
 
 

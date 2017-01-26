@@ -16,7 +16,7 @@ function fileToArray($file){
 function putStrFirstToThird($arrayFirstFile, $arraySecondFile){
 	$thirstFile = "thirdFile_1.txt";
 	$i = 0;
-	
+	$arrayThirstFile = [];
 	foreach($arrayFirstFile as $stringFirstFile){
 		foreach($arraySecondFile as $stringSecondFile){
 			if($stringFirstFile == $stringSecondFile){
@@ -48,8 +48,6 @@ function putStrFirstAndSecondToThird($arrayFirstFile, $arraySecondFile){
 function putDoubleStrToThird($arrayFirstFile, $arraySecondFile){
 	$thirstFile = "thirdFile_3.txt";
 	$arrayThirstFile = array_merge(checkDoubleStrInArray($arrayFirstFile), checkDoubleStrInArray($arraySecondFile));
-	var_dump($arrayThirstFile);
-	die();
 	$arrayToFile = implode(' ', $arrayThirstFile);
 	file_put_contents($thirstFile, $arrayToFile);
 }
@@ -76,8 +74,8 @@ function checkDoubleStrInArray($array){
 	return $arrayWithDoubleStr;
 }
 
-$firstFile = "C:/xampp/htdocs/PHP_Academy/17_01_17/1/firstFile.txt";
-$secondFile = "C:/xampp/htdocs/PHP_Academy/17_01_17/1/secondFile.txt";
+$firstFile = "firstFile.txt";
+$secondFile = "secondFile.txt";
 
 $arrayFirstFile = fileToArray($firstFile);
 $arraySecondFile = fileToArray($secondFile) ;
