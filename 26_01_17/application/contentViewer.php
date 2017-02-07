@@ -38,7 +38,7 @@ foreach($content as $item):
 	endif;
 	
 endforeach;
-	if(!$flag):?>
-		<h1> 404 Not Found</h1>
-	<?php	header("HTTP/1.0 404 Not Found");
-	endif;?>
+		if(!$flag):
+			header("HTTP/1.0 404 Not Found");?>
+			<h1> 404 Not Found</h1>
+<?php 	endif;?>
